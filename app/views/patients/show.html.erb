@@ -15,5 +15,27 @@
   <%= @patient.date_of_birth %>
 </p>
 
-<%= link_to 'Edit', edit_patient_path(@patient) %> |
-<%= link_to 'Back', patients_path %>
+<p>
+  <strong>Patient Notes:</strong>
+</p>
+
+<ul>
+  <% @patient.notes.each do |note| %>
+    <li>
+      <%= note.content %>
+      <td><%= link_to 'Edit Note', edit_note_path(note) %></td>
+      <td><%= link_to 'Delete Note', note, method: :delete, data: { confirm: 'Are you sure you want to delete this note?' } %></td>
+    </li>
+  <% end %>
+</ul>
+
+
+<p>
+  <%= link_to 'Add a New Patient Note', new_note_path %>
+</p>
+<p>
+  <%= link_to 'Edit Patient Information', edit_patient_path(@patient) %> |
+  <%= link_to 'Back', patients_path %>
+</p>
+
+
