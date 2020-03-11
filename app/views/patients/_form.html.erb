@@ -26,7 +26,17 @@
     <%= form.date_select :date_of_birth, start_year: 1920, end_year: 2020 %>
   </div>
 
+  <ol>
+    <%= form.fields_for :notes do |notes_form| %>
+      <li>
+        <%= form.label :note %>
+        <%= notes_form.text_area :content %>
+      </li>
+    <% end %>
+  </ol>
+
   <div class="actions">
     <%= form.submit %>
   </div>
 <% end %>
+
