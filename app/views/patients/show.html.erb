@@ -1,5 +1,7 @@
 <p id="notice"><%= notice %></p>
 
+<h1>Patient Information</h1>
+
 <p>
   <strong>First name:</strong>
   <%= @patient.first_name %>
@@ -23,7 +25,7 @@
   <% @patient.notes.each do |note| %>
     <li>
       <%= note.content %>
-      <td><%= link_to 'Edit Note', edit_note_path(note) %></td>
+      <td><%= link_to 'Edit Note', edit_note_path(note, patient_id: @patient.id) %></td>
       <td><%= link_to 'Delete Note', note, method: :delete, data: { confirm: 'Are you sure you want to delete this note?' } %></td>
     </li>
   <% end %>
@@ -31,8 +33,9 @@
 
 
 <p>
-  <%= link_to 'Add a New Patient Note', new_note_path %>
+  <%= link_to 'Add a New Patient Note', new_note_path(patient_id: @patient.id) %>
 </p>
+
 <p>
   <%= link_to 'Edit Patient Information', edit_patient_path(@patient) %> |
   <%= link_to 'Back', patients_path %>
