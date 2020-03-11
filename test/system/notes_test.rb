@@ -40,6 +40,6 @@ class NotesTest < ApplicationSystemTestCase
       click_on "Destroy", match: :first
     end
 
-    assert_text "Note was successfully destroyed"
+    assert_text "Note was successfully deleted"
   end
 end
