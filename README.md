@@ -1,24 +1,22 @@
-# README
+# Patient Notes App
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is a Rails app for doctors to keep track of patient information. 
 
-Things you may want to cover:
+## Architecture
 
-* Ruby version
+This app has two models: Patient and Note. The patients can have many notes and the notes belong to a patient.
 
-* System dependencies
+# Install
 
-* Configuration
+```
+$ git clone https://github.com/andreapell/patient-notes-app.git
+$ cd patient-notes-app
+$ bundle install
+$ rails db:migrate
+```
 
-* Database creation
+# Start
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+```
+$ rails server
+```
